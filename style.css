@@ -7,3 +7,36 @@ Description: A theme video streaming for wordpress / example : http://baston.Tv
 Version: 1.0
 
 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+@font-face {
+    font-family: 'Garage_Gothic_Bold';
+    src: url('inc/fonts/Garage_Gothic_Bold.otf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    max-width: 1030px;
+}
+
+nav .nav-wrapper {
+    position: relative;
+    margin: 0;
+    background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;
+    border: 0;
+}
+
+nav ul a {
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: Garage_Gothic_Bold,sans-serif;;
+}
+
+.logo {
+    float: left;
+}

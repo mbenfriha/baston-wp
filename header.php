@@ -2,6 +2,8 @@
 <head>
 
     <title><?= get_bloginfo( 'name' ); ?></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri () ?>/inc/css/materialize.min.css">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +62,35 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <div class="header">
+
+
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#!" class="logo"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <?php wp_nav_menu( array( 'theme_location' => 'Top', 'container_class' => 'menu', 'container_id' => 'menu', 'menu_class' => '' ) ); ?>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li><a href="badges.html"><i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        </a></li>
+                    <li><a href="collapsible.html"><i class="fa fa-snapchat-square" aria-hidden="true"></i>
+                        </a></li>
+                    <li><a href="mobile.html"><i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a></li>
+                </ul>
+            </div>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html">
+                    </a></li>
+                <li><a href="badges.html"><i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a></li>
+                <li><a href="collapsible.html">Javascript</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
 </div>

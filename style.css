@@ -28,6 +28,9 @@ nav .nav-wrapper {
     background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;
     border: 0;
 }
+nav .nav-wrapper .container {
+    position: relative;
+}
 
 nav ul a {
     color: white;
@@ -35,6 +38,33 @@ nav ul a {
     text-transform: uppercase;
     font-size: 24px;
     font-family: Garage_Gothic_Bold,sans-serif;;
+}
+
+nav ul li {
+    transition: background-color .3s;
+    float: left;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+nav > li {
+    float: left;
+}
+
+nav .sub-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.41);
+    height: 26em;
+}
+.sub-menu li {
 }
 
 .logo {

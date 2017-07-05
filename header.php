@@ -69,7 +69,13 @@
             <div class="container">
                 <a href="#!" class="logo"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <?php wp_nav_menu( array( 'theme_location' => 'Top', 'container_class' => 'menu', 'container_id' => 'menu', 'menu_class' => '' ) ); ?>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'Top',
+                    'menu_class'     => 'primary-menu',
+                    'walker' => new Baston_Walker()
+                ) );
+                ?>
 
                 <ul class="right hide-on-med-and-down">
                     <li><a href="sass.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
@@ -91,6 +97,7 @@
             </ul>
         </div>
     </nav>
+
 
 
 </div>

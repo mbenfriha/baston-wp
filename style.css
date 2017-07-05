@@ -25,7 +25,8 @@ Version: 1.0
 nav .nav-wrapper {
     position: relative;
     margin: 0;
-    background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;
+    /*background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;*/
+    background: linear-gradient(315deg, #ff0404 0%, #b50f0f 100%);
     border: 0;
 }
 nav .nav-wrapper .container {

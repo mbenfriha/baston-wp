@@ -67,15 +67,17 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#!" class="logo"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'Top',
-                    'menu_class'     => 'primary-menu',
-                    'walker' => new Baston_Walker()
-                ) );
-                ?>
+
+                <a href="#!" class="brand-logo center hide-on-large-only "><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+
+                <a href="#!" class="logo hide-on-med-and-down"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+
+                <ul class="hide-on-med-and-down menu-large">
+                <?php if (function_exists(sevenMenu())) sevenMenu(); ?>
+                </ul>
+
+
 
                 <ul class="right hide-on-med-and-down">
                     <li><a href="sass.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
@@ -88,12 +90,15 @@
                 </ul>
             </div>
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">
-                    </a></li>
-                <li><a href="badges.html"><i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
+                <?php if (function_exists(sevenMenu())) sevenMenu(); ?>
+                <ul class="socials">
+                    <li>
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <i class="fa fa-snapchat-square" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </li>
+                </ul>
             </ul>
         </div>
     </nav>

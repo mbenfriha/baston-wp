@@ -19,14 +19,14 @@ Version: 1.0
 }
 
 .container {
-    max-width: 1030px;
+    max-width: 1030px
 }
 
 nav .nav-wrapper {
     position: relative;
     margin: 0;
     /*background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;*/
-    background: linear-gradient(315deg, #ff0404 0%, #b50f0f 100%);
+    background: linear-gradient(315deg, #ff0404 0%, #940b0b 100%);
     border: 0;
 }
 nav .nav-wrapper .container {
@@ -59,15 +59,88 @@ nav > li {
 
 nav .sub-menu {
     display: none;
+    padding-top: 1em;
+    padding-bottom: 2em;
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(128, 128, 128, 0.41);
-    height: 26em;
+    background-color: rgba(0, 0, 0, 0.69);
+    border-bottom: 2px solid #e20808;
 }
 .sub-menu li {
 }
 
+.sub-menu .last-videos {
+    border-left: 4px solid #e20808;
+}
+
+.sub-category li.menu-item:hover {
+    background-color: #e20808;
+}
+
 .logo {
     float: left;
+}
+
+.side-nav {
+    background: linear-gradient(180deg, #ff0404 0%, #940b0b 100%);
+    padding-top: 2em;
+}
+
+.side-nav a {
+    font-size: 2em;
+}
+
+
+.menu-large h4.title-post {
+    font: 17px/1 "Garage_Gothic_Bold",sans-serif;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+    nav .sub-menu {
+        display: block;
+        position: relative;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 0;
+    }
+
+    nav .parent-category .parent-link {
+        font-size: 3em;
+        color: white;
+    }
+    li.parent-category {
+        position: relative;
+        margin-bottom: 1em;
+    }
+    li.parent-link:after {
+        content: "";
+        position: absolute;
+        left: 1em;
+        right: 1em;
+        background-color: white;
+        height: 3px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    li.parent-category:last-child:after {
+
+        width: 70%;
+    }
+    .sub-menu li {
+        border-bottom: 1px black solid;
+    }
+    .sub-menu li:last-child {
+        border: none;
+    }
+    .socials {
+        margin-top:2em;
+        font-size: 2em;
+    }
+    .socials i {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
 }

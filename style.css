@@ -18,15 +18,24 @@ Version: 1.0
     font-style: normal;
 }
 
+body {
+    background: #f3f3f3;
+}
+
+.index {
+    background-color: white;
+    height; 2em;
+}
+
 .container {
-    max-width: 1030px
+    max-width: 1000px
 }
 
 nav .nav-wrapper {
     position: relative;
     margin: 0;
     /*background: url(https://img4.hostingpics.net/pics/472114bgheaderbaston.jpg) center repeat-y #F44336;*/
-    background: linear-gradient(315deg, #ff0404 0%, #940b0b 100%);
+    background: linear-gradient(315deg, #e40d0d 0%, #940b0b 100%);
     border: 0;
 }
 nav .nav-wrapper .container {
@@ -38,7 +47,7 @@ nav ul a {
     font-weight: 900;
     text-transform: uppercase;
     font-size: 24px;
-    font-family: Garage_Gothic_Bold,sans-serif;;
+    font-family: Garage_Gothic_Bold,sans-serif;
 }
 
 nav ul li {
@@ -66,6 +75,9 @@ nav .sub-menu {
     left: 0;
     background-color: rgba(0, 0, 0, 0.69);
     border-bottom: 2px solid #e20808;
+    z-index: 4;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 .sub-menu li {
 }
@@ -83,7 +95,7 @@ nav .sub-menu {
 }
 
 .side-nav {
-    background: linear-gradient(180deg, #ff0404 0%, #940b0b 100%);
+    background: linear-gradient(180deg, #e40d0d 0%, #940b0b 100%);
     padding-top: 2em;
 }
 
@@ -98,18 +110,132 @@ nav .sub-menu {
     margin-top: 5px;
 }
 
+
+.carousel {
+    height: 400px !important;
+}
+
+.carousel.carousel-slider .carousel-fixed-item {
+    bottom: 68px;
+    z-index: 3;
+}
+.carousel.carousel-slider .carousel-fixed-item a {
+    color: white;
+}
+
+.carousel .play-slide {
+    font-size: 10em;
+    font-weight: 100;
+}
+
+.carousel .infos {
+    z-index: 3;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.49);
+    padding: 1px 17%;
+}
+.carousel img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+/*home*/
+
+.all-articles {
+    overflow: hidden;
+    padding-bottom: 7em;}
+
+article {
+    margin-bottom: 1em;
+}
+
+article:nth-child(2n+1) {
+    clear: left;
+}
+
+img.img-responsive.responsive--full.wp-post-image {
+    width: 100%;
+    height: 165px;
+}
+
+article .excerpt a {
+    color: black;
+    font-family: Garage_Gothic_Bold,sans-serif;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    max-height: 47px;
+    line-height: 1;
+    height: 58px;
+    width: 100%;
+    font-size: 2em !important;
+    text-transform: uppercase;
+}
+
+/*pagination*/
+
+.pagination {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0;
+    color: black;
+    font-weight: 800;
+    margin-bottom: 2em;
+}
+
+.pagination span, .pagination a {
+    display: inline-block;
+    margin: 0 2px;
+    transition: all 100ms ease-out;
+    color: black;
+    padding: 0.4em 1em;
+}
+
+.pagination .current {
+    background-color: red;
+    color: white;
+    padding: 0.4em 0.8em;
+    border-radius: 8em;
+}
+
+.pagination #next, .pagination #prev {
+    background-color: red;
+    padding: 0.4em 1em;
+    border-radius: 8em;
+    color: white;
+}
+
+/* mobile */
+
 @media only screen and (max-width: 1024px) {
+
+    .index {
+        width: 100% !important;
+    }
+    .side-nav {
+        background: rgba(0, 0, 0, 0.49);
+    }
     nav .sub-menu {
         display: block;
         position: relative;
-        text-align: center;
-        background-color: rgb(255, 255, 255);
+        background-color: transparent;
         margin-bottom: 0;
+        border: none;
+        color: white;
+    }
+    nav .sub-menu a {
+        color: white;
+        text-align: left;
     }
 
     nav .parent-category .parent-link {
         font-size: 3em;
         color: white;
+        background: linear-gradient(315deg, #e40d0d 0%, #940b0b 100%);
+        width: 60%;
+        text-align: left;
     }
     li.parent-category {
         position: relative;
@@ -130,7 +256,6 @@ nav .sub-menu {
         width: 70%;
     }
     .sub-menu li {
-        border-bottom: 1px black solid;
     }
     .sub-menu li:last-child {
         border: none;
@@ -142,5 +267,21 @@ nav .sub-menu {
     .socials i {
         margin-left: 0.5em;
         margin-right: 0.5em;
+    }
+    .carousel {
+        height: 200px !important;
+    }
+
+    article .excerpt a {
+        font-size: 1.1em !important;
+    }
+
+    article h4 {
+        font-size: 1.5em;
+    }
+
+    img.img-responsive.responsive--full.wp-post-image {
+        width: 100%;
+        height: 115px;
     }
 }

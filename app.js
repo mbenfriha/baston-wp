@@ -1,4 +1,18 @@
-$( document ).ready(function() {
+$(document).ready(function() {
+
+    $('.carousel').carousel({full_width: true});
+
+    autoplay()
+
+
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+        console.log('ok')
+    }
+
+    console.log('ko')
+
 
     if (window.matchMedia("(min-width: 1024px)").matches) {
         $('nav li > .sub-menu').parent().hover(function () {
@@ -11,5 +25,4 @@ $( document ).ready(function() {
         });
     }
     $(".button-collapse").sideNav();
-
 });

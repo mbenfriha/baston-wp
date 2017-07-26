@@ -236,13 +236,42 @@ function pressPagination($pages = '', $range = 2)
  *
  */
 
-function ajax_search_enqueues() {
-    if ( is_search() ) {
-        wp_enqueue_script( 'ajax-search', get_stylesheet_directory_uri() . '/js/ajax-search.js', array( 'jquery' ), '1.0.0', true );
-        wp_localize_script( 'ajax-search', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+add_action( 'wp_footer', 'ajax_fetch' );
+function ajax_fetch() {
+    ?>
+    <script type="text/javascript">
+        function fetch(){
+            console.log(jQuery('#keyword').val());
 
-        wp_enqueue_style( 'ajax-search', get_stylesheet_directory_uri() . '/css/ajax-search.css' );
-    }
+
+            jQuery.ajax({
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                type: 'post',
+                data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
+                success: function(data) {
+                    jQuery('#datafetch').html( data );
+                }
+            });
+
+        }
+    </script>
+
+    <?php
 }
 
-add_action( 'wp_enqueue_scripts', 'ajax_search_enqueues' );
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+function data_fetch(){
+
+    $the_query = new WP_Query( array( 'posts_per_page' => -1, 's' => esc_attr( $_POST['keyword'] ), 'post_type' => 'post' ) );
+    if( $the_query->have_posts() ) :
+        while( $the_query->have_posts() ): $the_query->the_post(); ?>
+
+            <span><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></span>
+
+        <?php endwhile;
+        wp_reset_postdata();
+    endif;
+
+    die();
+}

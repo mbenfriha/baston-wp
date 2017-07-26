@@ -121,7 +121,7 @@ nav i.material-icons.right {
     color: white;
 }
 
-nav input#search {
+nav input#search-large {
     width: 10px;
 }
 
@@ -129,8 +129,11 @@ nav .input-field input[type=search]:focus {
     background-color: transparent;
     color: white;
 }
+nav .search-form-large form {
+    margin-bottom: 0;
+}
 
-nav .search-form button {
+nav .search-form-large button {
     background: none;
     border: none;
 }

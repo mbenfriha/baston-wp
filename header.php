@@ -77,7 +77,7 @@
 
                 <a href="<?= esc_url( home_url( '/' )) ?>" class="brand-logo center hide-on-large-only "><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
 
-                <a href="<?= esc_url( home_url( '/' )) ?>" class="logo hide-on-med-and-down"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+                <a href="<?= esc_url( home_url( '/' )) ?>" class="logo hide-on-med-and-down"><img src="http://image.noelshack.com/fichiers/2017/30/3/1501100342-bastontv3.png" alt=""></a>
 
                 <ul class="hide-on-med-and-down menu-large">
                 <?php if (function_exists(sevenMenu())) sevenMenu(); ?>
@@ -120,13 +120,19 @@
                 </ul>
             </ul>
             <ul class="side-nav" id="mobile-demo-search">
-                <li>
+                <li style="height: 5em;">
                     <form action="<?= esc_url( home_url( '/' )) ?>">
                         <div class="input-field">
-                            <label class="label-icon" for="search"><button type="submit"><i class="material-icons right">search</i></button></label>
-                            <input id="search" type="search" name="s" class="" required>
+                            <label class="label-icon" for="search">
+                                <i class="material-icons right">search</i>
+                                </label>
+                            <input id="keyword" type="search" name="s" class="" onkeyup="fetch()" required>
                         </div>
                     </form>
+                </li>
+                <li>
+                    <div id="datafetch">Search results will appear here</div>
+
                 </li>
             </ul>
         </div>

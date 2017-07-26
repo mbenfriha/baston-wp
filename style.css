@@ -22,9 +22,16 @@ body {
     background: #f3f3f3;
 }
 
-.index {
+.index, .single, .category, .search {
     background-color: white;
-    height; 2em;
+}
+
+.index .all-videos, .single .row, .category .all-videos, .search .all-videos {
+    margin-bottom: 0px;
+}
+
+.single .row {
+    margin-bottom: 0px;
 }
 
 .container {
@@ -110,6 +117,40 @@ nav .sub-menu {
     margin-top: 5px;
 }
 
+nav i.material-icons.right {
+    color: white;
+}
+
+nav input#search {
+    width: 10px;
+}
+
+nav .input-field input[type=search]:focus {
+    background-color: transparent;
+    color: white;
+}
+
+nav .search-form button {
+    background: none;
+    border: none;
+}
+
+nav .hide-on-med-and-down .fa {
+    color: #c20c0c;
+    font-size: 17px;
+}
+
+nav .hide-on-med-and-down .fa:before {
+    background-color: white;
+    border-radius: 5em;
+    padding: 8px 10px;
+}
+
+nav .hide-on-med-and-down .fa-facebook-f:before, .fa-facebook:before {
+    padding: 8px 13px !important;
+}
+/* carousel */
+
 
 .carousel {
     height: 400px !important;
@@ -151,9 +192,6 @@ article {
     margin-bottom: 1em;
 }
 
-article:nth-child(2n+1) {
-    clear: left;
-}
 
 img.img-responsive.responsive--full.wp-post-image {
     width: 100%;
@@ -171,6 +209,11 @@ article .excerpt a {
     width: 100%;
     font-size: 2em !important;
     text-transform: uppercase;
+}
+
+img.img-content-large {
+    min-height: 20em;
+    max-height: 30em;
 }
 
 /*pagination*/
@@ -207,12 +250,148 @@ article .excerpt a {
     color: white;
 }
 
+/* single */
+
+.single {
+    padding: 0em 0.6%;
+    border-right: 2px solid #cacaca;
+    border-left: 2px solid #cacaca;
+    height: auto;
+}
+
+.single .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.single .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.single h1 {
+    font: 4em/1 "Garage_Gothic_Bold",sans-serif;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.single img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.single .comment {
+    padding: 3em;
+}
+
+.single .sub-video {
+    padding: 1em;
+}
+
+.single .info-video {
+    text-align: left;
+    padding: 4px 1px;
+}
+
+.single .sub-video .description {
+    clear: both;
+    overflow: hidden;
+    margin-top: 6em;
+    margin-bottom: 2em;
+    padding-top: 2em;
+    border-top: 1px rgba(0, 0, 0, 0.31) solid;
+}
+
+.single .sub-video .share {
+    padding: 0;
+}
+
+.single .sub-video .share .share-btn {
+    float: left;
+    width: 50%;
+    padding: 4px 1em;
+    text-align: center;
+    color: white;
+    font-size: 1.6em;
+}
+
+.fb-share {
+    background-color: #3e59a5;
+}
+
+.tw-share {
+    background-color: #1b95e0;
+}
+
+.sub-video .tags {
+    margin-bottom: 2em;
+}
+
+/* footer */
+
+.footer {
+    background: black;
+    padding: 1em;
+    color: white;
+    font-family: 'Garage_Gothic_Bold';
+    font-size: 2em;
+}
+
+
+/* sidebar */
+
+.sidebar {
+    padding: 1em 1em;
+}
+
+/* category */
+
+.category {
+    padding: 2em 0em;
+}
+
+.category .all-articles h1 {
+    text-align: center;
+    font-family: 'Garage_Gothic_Bold';
+}
+
+
+/* search */
+
+.search {
+    padding: 2em 0em;
+}
+
+.search .all-articles h1 {
+    text-align: center;
+    font-family: 'Garage_Gothic_Bold';
+}
+
+.search article:nth-child(3n+1) {
+    clear:left
+}
+
+
 /* mobile */
 
 @media only screen and (max-width: 1024px) {
 
-    .index {
+    .index, .single {
         width: 100% !important;
+    }
+
+    .index .row, .single .row {
+        margin-left: 0rem;
+        margin-right: 0rem;
     }
     .side-nav {
         background: rgba(0, 0, 0, 0.49);
@@ -252,7 +431,6 @@ article .excerpt a {
         margin: 0 auto;
     }
     li.parent-category:last-child:after {
-
         width: 70%;
     }
     .sub-menu li {
@@ -283,5 +461,34 @@ article .excerpt a {
     img.img-responsive.responsive--full.wp-post-image {
         width: 100%;
         height: 115px;
+    }
+
+    .single {
+    }
+
+    .single h1 {
+        font-size: 2em;
+
+    }
+
+    .single .sub-video h1 {
+        text-align: center;
+    }
+
+    .single .sub-video .share .share-btn {
+        float: left;
+        width: 50%;
+        padding: 10px 1em;
+        text-align: center;
+        color: white;
+        margin-bottom: 1em;
+        margin-right: 0em;
+        font-size: 2em;
+    }
+
+    .single .info-video {
+        margin-bottom: 11px;
+        text-align: center;
+        font-size: 11px;
     }
 }

@@ -35,6 +35,46 @@ function settingsPage( )
     include ('admin-menu.php');
 }
 
+/*
+ *
+ * custom field
+ *
+ */
+
+add_action('wp_insert_post', 'wpc_champs_personnalises_defaut');
+function wpc_champs_personnalises_defaut($post_id)
+{
+
+    add_post_meta($post_id, 'baston_video_code', '', true);
+    return true;
+}
+
+
+/*
+ *
+ * metabox
+ *
+ */
+
+add_action('add_meta_boxes','initialisation_metaboxes');
+function initialisation_metaboxes(){
+    //on utilise la fonction add_metabox() pour initialiser une metabox
+    add_meta_box('baston_video_code', 'Video Code', 'videoCode', 'post', 'normal', 'high');
+}
+
+function videoCode($post){
+    echo '<label for="baston_video_code">iframe video : </label>';
+    echo '<textarea id="baston_video_code" cols="100" row="10" type="text" name="baston_video_code" >'.get_post_meta($post->ID,'baston_video_code',true).'</textarea>';
+}
+
+add_action('save_post','save_metaboxes');
+function save_metaboxes($post_ID){
+    // si la metabox est définie, on sauvegarde sa valeur
+    if(isset($_POST['baston_video_code'])){
+        update_post_meta($post_ID,'baston_video_code', $_POST['baston_video_code']);
+    }
+}
+
 function sevenMenu(  ) {
     $menu_name = 'Top';
     $menu_list ='';
@@ -189,3 +229,20 @@ function pressPagination($pages = '', $range = 2)
         echo "</div>";
     }
 }
+
+/*
+ *
+ * ajax search
+ *
+ */
+
+function ajax_search_enqueues() {
+    if ( is_search() ) {
+        wp_enqueue_script( 'ajax-search', get_stylesheet_directory_uri() . '/js/ajax-search.js', array( 'jquery' ), '1.0.0', true );
+        wp_localize_script( 'ajax-search', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+        wp_enqueue_style( 'ajax-search', get_stylesheet_directory_uri() . '/css/ajax-search.css' );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'ajax_search_enqueues' );

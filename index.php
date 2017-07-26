@@ -32,13 +32,20 @@
     </div>
 
 
-    <div class="row">
+    <div class="row all-videos">
         <div class="col s12 m8 l8">
             <div class="all-articles">
                 <?php if (have_posts()) : while (have_posts()) : the_post();
 
 
-                    get_template_part( 'content', get_post_format() );
+                    if( $wp_query->current_post % 5 == 4 ) {
+                        get_template_part( 'content-large', get_post_format() );
+
+                    } else {
+                        get_template_part( 'content', get_post_format() );
+
+                    }
+
 
 
                 endwhile; else:
@@ -51,7 +58,10 @@
 
 
         </div>
-        <div class="col s12 m4 l4">sidebar</div>
+        <div class="col s12 m4 l4 hide-on-small-only">
+            <?php get_sidebar(); ?>
+
+        </div>
     </div>
 
 </div>

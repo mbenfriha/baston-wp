@@ -72,11 +72,12 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse left-menu"><i class="material-icons">menu</i></a>
+                <a href="#" data-activates="mobile-demo-search" class="button-collapse right-search right"><i class="material-icons">search</i></a>
 
-                <a href="#!" class="brand-logo center hide-on-large-only "><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+                <a href="<?= esc_url( home_url( '/' )) ?>" class="brand-logo center hide-on-large-only "><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
 
-                <a href="#!" class="logo hide-on-med-and-down"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+                <a href="<?= esc_url( home_url( '/' )) ?>" class="logo hide-on-med-and-down"><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
 
                 <ul class="hide-on-med-and-down menu-large">
                 <?php if (function_exists(sevenMenu())) sevenMenu(); ?>
@@ -85,12 +86,21 @@
 
 
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href="badges.html"><i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <li class="search-form-large">
+                            <form action="<?= esc_url( home_url( '/' )) ?>">
+                                <div class="input-field search-form-large">
+                                   <label class="label-icon search-form-large" for="search"><button type="submit"><i class="material-icons right">search</i></button></label>
+                                    <input id="search-large" type="search" name="s" class="search-form-large" required>
+                                </div>
+                            </form>
+                        </a>
+                    </li>
+                    <li><a href="https://www.facebook.com/bastontv/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/bastontv"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a></li>
-                    <li><a href="collapsible.html"><i class="fa fa-snapchat-square" aria-hidden="true"></i>
+                    <li><a href="https://www.snapchat.com/add/bastontv"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
                         </a></li>
-                    <li><a href="mobile.html"><i class="fa fa-instagram" aria-hidden="true"></i>
+                    <li><a href="https://www.instagram.com/bastontv/"><i class="fa fa-instagram" aria-hidden="true"></i>
                         </a></li>
                 </ul>
             </div>
@@ -108,6 +118,16 @@
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                     </li>
                 </ul>
+            </ul>
+            <ul class="side-nav" id="mobile-demo-search">
+                <li>
+                    <form action="<?= esc_url( home_url( '/' )) ?>">
+                        <div class="input-field">
+                            <label class="label-icon" for="search"><button type="submit"><i class="material-icons right">search</i></button></label>
+                            <input id="search" type="search" name="s" class="" required>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>

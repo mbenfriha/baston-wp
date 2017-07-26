@@ -8,10 +8,8 @@ $(document).ready(function() {
     function autoplay() {
         $('.carousel').carousel('next');
         setTimeout(autoplay, 4500);
-        console.log('ok')
     }
 
-    console.log('ko')
 
 
     if (window.matchMedia("(min-width: 1024px)").matches) {
@@ -24,5 +22,20 @@ $(document).ready(function() {
             }
         });
     }
-    $(".button-collapse").sideNav();
+    $(".left-menu").sideNav();
+    $(".right-search").sideNav({
+        edge: 'right'
+    });
+
+
+    $(document).click(function(e) {
+        if($(event.target).closest('.search-form-large').length) {
+            $('nav input#search-large').css('width', '5em');
+        }
+        else {
+            $('nav input#search-large').css('width', '10px');
+
+        }
+        console.log($(event.target));
+    })
 });

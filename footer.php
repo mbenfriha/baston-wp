@@ -1,5 +1,7 @@
 <div class="footer">
-pipi
+    <div class="container">
+        BASTON @ 2017
+    </div>
 </div>
 
 

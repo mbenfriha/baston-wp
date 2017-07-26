@@ -1,13 +1,19 @@
+<?php
+/*
+Template Name: Search Page
+*/
+?>
+
 <?php get_header(); ?>
 
 
 
-<div class="category container">
+<div class="search container">
 
     <div class="row all-videos">
         <div class="col s12 m8 l8">
             <div class="all-articles">
-                <h1><?php single_cat_title(); ?></h1>
+                <h1><?php the_search_query(); ?></h1>
 
                 <?php if (have_posts()) : while (have_posts()) : the_post();
 
@@ -41,3 +47,4 @@
 </div>
 
 <?php get_footer(); ?>
+>

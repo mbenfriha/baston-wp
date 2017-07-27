@@ -157,6 +157,11 @@ nav #mobile-demo-search li a {
     margin-bottom: 1em;
 }
 
+nav .menu-item img  {
+    width: 150px;
+    height: 150px;
+}
+
 .input-field input[type=search] {
     padding-left: 5rem;
     border-bottom: 1px solid white;

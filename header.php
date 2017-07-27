@@ -75,9 +75,9 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse left-menu"><i class="material-icons">menu</i></a>
                 <a href="#" data-activates="mobile-demo-search" class="button-collapse right-search right"><i class="material-icons">search</i></a>
 
-                <a href="<?= esc_url( home_url( '/' )) ?>" class="brand-logo center hide-on-large-only "><img src="https://img4.hostingpics.net/pics/862116bastontvblanc.png" alt=""></a>
+                <a href="<?= esc_url( home_url( '/' )) ?>" class="brand-logo center hide-on-large-only "><img src="http://image.noelshack.com/fichiers/2017/30/4/1501157752-bastontv4.png" alt=""></a>
 
-                <a href="<?= esc_url( home_url( '/' )) ?>" class="logo hide-on-med-and-down"><img src="http://image.noelshack.com/fichiers/2017/30/3/1501100342-bastontv3.png" alt=""></a>
+                <a href="<?= esc_url( home_url( '/' )) ?>" class="logo hide-on-med-and-down"><img src="http://image.noelshack.com/fichiers/2017/30/4/1501157752-bastontv4.png" alt=""></a>
 
                 <ul class="hide-on-med-and-down menu-large">
                 <?php if (function_exists(sevenMenu())) sevenMenu(); ?>

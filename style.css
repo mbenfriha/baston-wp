@@ -86,6 +86,11 @@ nav .sub-menu {
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
+
+nav .input-field label {
+    top: -18%;
+    left: 0;
+}
 .sub-menu li {
 }
 
@@ -530,6 +535,7 @@ div#comment {
     nav .sub-menu a {
         color: white;
         text-align: left;
+        font-size: 2em;
     }
 
     nav .parent-category .parent-link {
@@ -634,5 +640,10 @@ div#comment {
 
     .footer .social-footer {
         float: none;
+    }
+
+    input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid white;
+        box-shadow: 0 1px 0 0 white;
     }
 }

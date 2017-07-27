@@ -241,17 +241,19 @@ function ajax_fetch() {
     ?>
     <script type="text/javascript">
         function fetch(){
-            console.log(jQuery('#keyword').val());
 
+            if(jQuery('#keyword').val().length > 1) {
 
-            jQuery.ajax({
-                url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                type: 'post',
-                data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
-                success: function(data) {
-                    jQuery('#datafetch').html( data );
-                }
-            });
+                jQuery.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    type: 'post',
+                    data: {action: 'data_fetch', keyword: jQuery('#keyword').val()},
+                    success: function (data) {
+                        jQuery('#mobil-form').nextAll().remove();
+                        jQuery('#mobil-form').after(data);
+                    }
+                });
+            }
 
         }
     </script>
@@ -267,11 +269,23 @@ function data_fetch(){
     if( $the_query->have_posts() ) :
         while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
-            <span><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></span>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
 
         <?php endwhile;
         wp_reset_postdata();
     endif;
 
     die();
+}
+
+if ( function_exists('register_sidebar') ) {
+    register_sidebar( array(
+        'name' => 'Sidebar',
+        'id' => 'sidebar',
+        'description' => 'Appears in the sidebar area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title red white-text">',
+        'after_title' => '</h3>',
+    ) );
 }

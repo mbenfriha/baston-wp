@@ -22,7 +22,7 @@
 <?php wp_head( ) ?>
     <?php if (have_posts()):while(have_posts()):the_post(); endwhile; endif;?>
     <!-- the default values -->
-    <meta property="fb:app_id" content="1992139823" />
+    <meta property="fb:app_id" content="138315323424887" />
 
     <!-- if page is content page -->
     <?php if (is_single()) { ?>
@@ -120,20 +120,31 @@
                 </ul>
             </ul>
             <ul class="side-nav" id="mobile-demo-search">
-                <li style="height: 5em;">
+                <li id="mobil-form" style="height: 5em;">
                     <form action="<?= esc_url( home_url( '/' )) ?>">
-                        <div class="input-field">
+                        <div class="input-field col s6">
+                            <input id="keyword" type="search" name="s" class="" onkeyup="fetch()" required>
                             <label class="label-icon" for="search">
                                 <i class="material-icons right">search</i>
-                                </label>
-                            <input id="keyword" type="search" name="s" class="" onkeyup="fetch()" required>
+                            </label>
                         </div>
                     </form>
                 </li>
-                <li>
-                    <div id="datafetch">Search results will appear here</div>
 
+                <li>
+                    <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
+
             </ul>
         </div>
     </nav>

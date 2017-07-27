@@ -58,7 +58,7 @@
 
 
         </div>
-        <div class="col s12 m4 l4 hide-on-small-only">
+        <div class="col s12 m4 l4 hide-on-med-and-down">
             <?php get_sidebar(); ?>
 
         </div>

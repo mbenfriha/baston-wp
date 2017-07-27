@@ -11,6 +11,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post col s12'); ?>>
+    <span class="category-post red"><?php the_category( ', ' ); ?></span>
+
 
     <a href="<?php the_permalink(); ?>"><div class="thumb col s12">
             <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-responsive responsive--full img-content-large', 'title' => 'Feature image']); ?>

@@ -7,10 +7,10 @@
 
         <div class="video col s12">
             <?php
-                if(get_post_meta(get_the_ID(), 'baston_video_code')[0])
-                    echo get_post_meta(get_the_ID(), 'baston_video_code')[0];
-                else
-                    the_post_thumbnail('post-thumbnail', ['class' => 'img-single', 'title' => 'Feature image']);
+            if(get_post_meta(get_the_ID(), 'baston_video_code')[0])
+                echo get_post_meta(get_the_ID(), 'baston_video_code')[0];
+            else
+                the_post_thumbnail('post-thumbnail', ['class' => 'img-single', 'title' => 'Feature image']);
             ?>
         </div>
 
@@ -39,12 +39,39 @@
                     <?php the_tags('Tags: <div class="chip">', '</div><div class="chip"> ', '</div><br />'); ?>
                 </div>
             </div>
-            <div id="comment col s12">
+
+            <div class="more-video col s12">
+                <div class="widget-title red white-text">
+                    Les autres
+                </div>
+                <ul class="col s12">
+                    <?php
+
+                    query_posts('orderby=rand&posts_per_page=4&cat='. get_the_category(get_the_ID())[0]->term_id);
+
+                    while ( have_posts() ) : the_post();
+                        echo
+                            '<li class="col s12 m3 l3">
+                               <a href="'. get_permalink(get_the_ID()) .'">' . get_the_post_thumbnail(get_the_ID(), 'small') . '</a>
+                                <span class="title-more"> <a href="'. get_permalink(get_the_ID()) .'">' . get_the_title(get_the_ID()). ' </a></span>
+                               </li>';
+                    endwhile;
+
+                    wp_reset_query();
+                    ?>
+                </ul>
+            </div>
+
+            <div id="comment" class="col s12">
+                <div class="widget-title red white-text">commentaires </div>
+
+
                 <?php comments_template(); ?>
             </div>
+
         </div>
 
-        <div class="col s4 hide-on-small-only">
+        <div class="col s4 hide-on-med-and-down">
             <?php get_sidebar(); ?>
         </div>
     </div>

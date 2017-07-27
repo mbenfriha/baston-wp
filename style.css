@@ -138,6 +138,34 @@ nav .search-form-large button {
     border: none;
 }
 
+nav #mobile-demo-search {
+    padding-top: 3em;
+}
+nav #mobile-demo-search .label-icon{
+    border-right: 1px white solid;
+}
+
+nav #mobile-demo-search li a {
+    color: white;
+    height: auto;
+    background: linear-gradient(315deg, #e40d0d 0%, #940b0b);
+    margin-bottom: 1em;
+}
+
+.input-field input[type=search] {
+    padding-left: 5rem;
+    border-bottom: 1px solid white;
+}
+
+li#mobil-form {
+    height: 4em;
+    margin-bottom: 1em;
+}
+
+.input-field input[type=search]:focus+label i, .input-field input[type=search]:focus ~ .mdi-navigation-close, .input-field input[type=search]:focus ~ .material-icons {
+     color: white;
+}
+
 nav .hide-on-med-and-down .fa {
     color: #c20c0c;
     font-size: 17px;
@@ -193,6 +221,7 @@ nav .hide-on-med-and-down .fa-facebook-f:before, .fa-facebook:before {
 
 article {
     margin-bottom: 1em;
+    position: relative;
 }
 
 
@@ -217,6 +246,17 @@ article .excerpt a {
 img.img-content-large {
     min-height: 20em;
     max-height: 30em;
+}
+
+
+article span.category-post {
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    padding: 2px 10Px;
+}
+article span.category-post a {
+    color: white;
 }
 
 /*pagination*/
@@ -284,7 +324,7 @@ img.img-content-large {
     margin-top: 5px;
 }
 
-.single img {
+.single .video img {
     position: absolute;
     top: 0;
     left: 0;
@@ -339,14 +379,74 @@ img.img-content-large {
     margin-bottom: 2em;
 }
 
+.more-video {
+}
+
+.more-video li {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.more-video li a {
+    color: black;
+    font-family: 'Garage_Gothic_Bold';
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.more-video img {
+    width: 160px;
+    height: 120px;
+}
+
+div#comment {
+    margin-top: 3em;
+}
+
 /* footer */
 
 .footer {
     background: black;
-    padding: 1em;
     color: white;
     font-family: 'Garage_Gothic_Bold';
     font-size: 2em;
+    overflow: hidden;
+    padding: 1em;
+}
+
+.footer ul {
+    margin: 0;
+}
+
+.footer ul li {
+    transition: background-color .3s;
+    float: left;
+    padding: 0;
+    text-align: center;
+    margin-left: 1em;
+}
+
+.footer ul a {
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: Garage_Gothic_Bold,sans-serif;
+}
+
+.footer .fa {
+    color: #c20c0c;
+    font-size: 17px;
+}
+
+.footer .fa:before {
+    background-color: white;
+    border-radius: 5em;
+    padding: 8px 10px;
+}
+
+.footer .social-footer {
+    float: right;
 }
 
 
@@ -354,6 +454,25 @@ img.img-content-large {
 
 .sidebar {
     padding: 1em 1em;
+}
+
+.widget-title {
+    font-family: 'Garage_Gothic_Bold';
+    text-transform: uppercase;
+    font-size: 2em;
+    padding: 2px 11px;
+}
+
+.widget li a {
+    color: black;
+    font-family: 'Garage_Gothic_Bold';
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.widget li a:hover {
+    color: #F44336;
+
 }
 
 /* category */
@@ -388,9 +507,10 @@ img.img-content-large {
 
 @media only screen and (max-width: 1024px) {
 
-    .index, .single {
+    .index, .single, .category, .search {
         width: 100% !important;
     }
+
 
     .index .row, .single .row {
         margin-left: 0rem;
@@ -493,5 +613,26 @@ img.img-content-large {
         margin-bottom: 11px;
         text-align: center;
         font-size: 11px;
+    }
+    .more-video img {
+        width: 100%;
+    }
+
+    .more-video li {
+        margin-bottom: 1em;
+    }
+
+    .copyright {
+        margin-top: 1em;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .footer {
+        padding: 6px;
+    }
+
+    .footer .social-footer {
+        float: none;
     }
 }

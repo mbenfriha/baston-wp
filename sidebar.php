@@ -1,3 +1,7 @@
 <div class="sidebar">
-    sidebar pipi
+    <?php
+    if(is_active_sidebar('sidebar')){
+        dynamic_sidebar('sidebar');
+    }
+    ?>
 </div>
